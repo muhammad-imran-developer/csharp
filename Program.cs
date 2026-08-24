@@ -19,7 +19,6 @@ class Program
         numref = 20;
         Console.WriteLine(numref);
 
-        Console.WriteLine('Hello world');
 
 
     }
