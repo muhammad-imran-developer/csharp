@@ -11,7 +11,7 @@ class Program
     static void Main(string[] args)
     {
 
-        int sum = Sum(5, 6);
+        int sum = Sum(5, 6, 4);
         Console.WriteLine(sum);
 
     }
@@ -22,6 +22,13 @@ class Program
         return n1 + n2;
 
     }
+
+    static int Sum(int n1, int n2, int n3)
+    {
+        return n1 + n2 + n3;
+
+    }
+
 
 
 }
