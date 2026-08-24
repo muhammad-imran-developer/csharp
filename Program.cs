@@ -10,16 +10,16 @@ class Program
 
     static void Main(string[] args)
     {
-        int num = 12;
 
-        ref int numref = ref num;
+        int sum = Sum(5, 6);
+        Console.WriteLine(sum);
 
-        Console.WriteLine(num);
+    }
 
-        numref = 20;
-        Console.WriteLine(numref);
+    static int Sum(int n1, int n2)
+    {
 
-
+        return n1 + n2;
 
     }
 
