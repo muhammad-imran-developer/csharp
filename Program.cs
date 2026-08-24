@@ -10,24 +10,20 @@ class Program
 
     static void Main(string[] args)
     {
+        bool CanVote;
 
-        int sum = Sum(5, 6, 4, 5, 3);
-        Console.WriteLine(sum);
+        int Age = 18;
 
-    }
+        string Can;
 
-    static int Sum(params int[] numbers)
-    {
-        int total = 0;
-        foreach (var num in numbers)
-        {
-            total += num;
-        }
+        CanVote = Age >= 18 ? true : false;
 
-        return total;
+        Can = CanVote ? "Yesn You Can." : "No";
+        Console.WriteLine(CanVote);
+        Console.WriteLine(Can);
+
 
     }
-
 
 
 
