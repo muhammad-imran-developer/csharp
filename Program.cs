@@ -11,23 +11,23 @@ class Program
     static void Main(string[] args)
     {
 
-        int sum = Sum(5, 6, 4);
+        int sum = Sum(5, 6, 4, 5, 3);
         Console.WriteLine(sum);
 
     }
 
-    static int Sum(int n1, int n2)
+    static int Sum(params int[] numbers)
     {
+        int total = 0;
+        foreach (var num in numbers)
+        {
+            total += num;
+        }
 
-        return n1 + n2;
+        return total;
 
     }
 
-    static int Sum(int n1, int n2, int n3)
-    {
-        return n1 + n2 + n3;
-
-    }
 
 
 
