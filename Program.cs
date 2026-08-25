@@ -10,10 +10,11 @@ class Program
 
     static void Main(string[] args)
     {
-        Person person = new();
-
-        person.Name = "Muhammad Imran";
-        person.Age = 19;
+        Person person = new()
+        {
+            Name = "MUHAMMAD IMRAN",
+            Age = 19,
+        };
 
         Console.WriteLine(person.Name);
         Console.WriteLine(person.Age);
@@ -25,15 +26,6 @@ class Program
     }
 
 
-    class Person
-    {
-        public string? Name;
-        public int Age;
 
-        public void Sing()
-        {
-            Console.WriteLine("Larki Beautiful kar gayi chul");
-        }
-    }
 
 }
