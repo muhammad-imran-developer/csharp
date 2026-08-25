@@ -10,21 +10,23 @@ class Program
 
     static void Main(string[] args)
     {
-        bool CanVote;
+        Person person = new();
 
-        int Age = 18;
+        person.Name = "Muhammad Imran";
+        person.Age = 19;
 
-        string Can;
+        Console.WriteLine(person.Name);
+        Console.WriteLine(person.Age);
 
-        CanVote = Age >= 18 ? true : false;
-
-        Can = CanVote ? "Yesn You Can." : "No";
-        Console.WriteLine(CanVote);
-        Console.WriteLine(Can);
 
 
     }
 
 
+    class Person
+    {
+        public string? Name;
+        public int Age;
+    }
 
 }
