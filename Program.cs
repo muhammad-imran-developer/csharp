@@ -18,6 +18,8 @@ class Program
         Console.WriteLine(person.Name);
         Console.WriteLine(person.Age);
 
+        person.Sing();
+
 
 
     }
@@ -27,6 +29,11 @@ class Program
     {
         public string? Name;
         public int Age;
+
+        public void Sing()
+        {
+            Console.WriteLine("Larki Beautiful kar gayi chul");
+        }
     }
 
 }
