@@ -6,28 +6,23 @@ using System.Security.Cryptography;
 
 class Person
 {
-    // public string? Name;
+    public string Name = "TEST";
+    public static int Age = 18;
 
-    public Person()
+    public static void Talk()
     {
-        m_Name = "SET NAME";
+        Console.WriteLine(Age);
+        Console.WriteLine("PERSON IS TALKIN.");
     }
+}
 
-    public Person(string _name) : this()
-    {
-        Name = _name;
-    }
-    string m_Name;
 
-    public string Name
-    {
-        set
-        {
-            m_Name = string.IsNullOrEmpty(value) ? m_Name : value;
-        }
-        get
-        {
-            return m_Name;
-        }
-    }
+class Doctor : Person
+{
+
+}
+
+class Patient : Person
+{
+
 }
