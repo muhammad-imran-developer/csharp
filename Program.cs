@@ -11,10 +11,9 @@ class Program
 
     static void Main(string[] args)
     {
-        Person person = new()
-        {
-            Name = "IMRAN",
-        };
+        Person person = new("TIKTOK");
+
+
 
 
         Console.WriteLine(person.Name);
