@@ -13,7 +13,7 @@ class Program
     {
         Doctor doctor = new();
 
-        Doctor.Talk();
+        doctor.Talk();
     }
 
 
