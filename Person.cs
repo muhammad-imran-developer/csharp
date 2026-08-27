@@ -1,11 +1,21 @@
 
+
+using System;
+
 class Person
 {
-    public string? Name;
-    public int Age;
+    // public string? Name;
+    string? m_Name;
 
-    public void Sing()
+    public string Name
     {
-        Console.WriteLine("Larki Beautiful kar gayi chul");
+        set
+        {
+            m_Name = string.IsNullOrEmpty(value) ? "MUHAMMAD" : value;
+        }
+        get
+        {
+            return m_Name ?? "MUHAMMAD";
+        }
     }
 }

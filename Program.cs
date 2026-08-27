@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace MyApp;
@@ -12,20 +13,12 @@ class Program
     {
         Person person = new()
         {
-            Name = "MUHAMMAD IMRAN",
-            Age = 19,
+            Name = "IMRAN",
         };
 
+
         Console.WriteLine(person.Name);
-        Console.WriteLine(person.Age);
-
-        person.Sing();
-
-
-
     }
-
-
 
 
 }
