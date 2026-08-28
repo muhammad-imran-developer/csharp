@@ -13,12 +13,9 @@ class Program
     {
 
         Doctor doctor = new();
-        Patient patient = new();
-        Doctor doctor1 = new();
-        Doctor doctor2 = new();
 
-
-        Console.WriteLine(Person.Count);
+        doctor.Name = "Muhammad Imran";
+        Console.WriteLine(doctor.GetName());
 
 
 
