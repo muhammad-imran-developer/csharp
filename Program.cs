@@ -11,9 +11,17 @@ class Program
 
     static void Main(string[] args)
     {
-        Doctor doctor = new();
 
-        doctor.Talk();
+        Doctor doctor = new();
+        Patient patient = new();
+        Doctor doctor1 = new();
+        Doctor doctor2 = new();
+
+
+        Console.WriteLine(Person.Count);
+
+
+
     }
 
 

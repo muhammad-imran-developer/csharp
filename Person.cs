@@ -7,16 +7,19 @@ using System.Security.Cryptography;
 
 abstract class Person
 {
-    public string Name = "TEST";
-    public static int Age = 18;
+    // STATIC DATA IS CREATED ONLY ONCE
 
-    abstract public void Talk();
+    static public ulong Count = 0ul;
+
+    public Person()
+    {
+        Count++;
+    }
 }
-
 
 class Doctor : Person
 {
-    public override void Talk()
+    public Doctor() : base()
     {
 
     }
@@ -24,8 +27,9 @@ class Doctor : Person
 
 class Patient : Person
 {
-    public override void Talk()
+    public Patient() : base()
     {
 
     }
+
 }
