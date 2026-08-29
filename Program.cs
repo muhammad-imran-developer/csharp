@@ -8,24 +8,19 @@ namespace MyApp;
 
 class Program
 {
-
+    // Normal method call mein tum kehte ho "ye method abhi chalao"; delegate mein tum kehte ho "is method ka reference rakho, main ise baad mein ya kisi aur jagah se chalaunga."
     static void Main(string[] args)
     {
+        Person.Alert alert = Person.Desktop;
 
-        IPerson person = new Doctor();
-        Console.WriteLine(person.Who());
-
-        person = new Manager();
-        Console.WriteLine(person.Who());
+        alert += Person.Laptop;
+        alert += Person.Mobile;
 
 
-        IAnimal animal;
+        alert.Invoke("OK");
 
-        animal = new Dog();
-        animal.MakeSound();
 
-        animal = new Cat();
-        animal.MakeSound();
+
 
     }
 

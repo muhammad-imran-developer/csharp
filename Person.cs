@@ -1,55 +1,21 @@
 using System;
-using System.ComponentModel;
-using System.Security.Cryptography;
 
-// Interface is easy and best way for make abstract class
-interface IPerson
+class Person
 {
-    string? Who();
-
-}
-
-// Ek hi cheez ka multiple forms mein behave karna.Polymorphism
-
-class Doctor : IPerson
-{
-
-    public string? Who()
+    public static void Desktop(string msg)
     {
-        return ToString()?.Split('.')[^1];
+        Console.WriteLine($"This is Desktop. {msg}");
     }
 
-
-}
-
-class Manager : IPerson
-{
-
-    public string? Who()
+    public static void Laptop(string msg)
     {
-        return ToString()?.Split('.')[^1];
+        Console.WriteLine($"This is Laptop. {msg}");
     }
 
-
-}
-interface IAnimal
-{
-    void MakeSound();
-}
-
-class Dog : IAnimal
-{
-    public void MakeSound()
+    public static void Mobile(string msg)
     {
-        Console.WriteLine("Woof!");
+        Console.WriteLine($"This is Mobile. {msg}");
     }
-}
 
-
-class Cat : IAnimal
-{
-    public void MakeSound()
-    {
-        Console.WriteLine("Meow!");
-    }
+    public delegate void Alert(string msg);
 }
