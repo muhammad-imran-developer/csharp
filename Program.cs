@@ -10,65 +10,25 @@ class Program
 {
     static void Main(string[] args)
     {
-        // try
+
+        // Func<int, bool> isOdd = (int n) => n % 2 == 1;
+        // var isEven = (int n) =>
         // {
-        //     int a = 10;
-        //     int b = 0;
-
-        //     int result = a / b;
-        // }
-
-        // catch (Exception ex)
-        // {
-        //     Console.WriteLine(ex.Message);
-        // }
+        //     return n % 2 == 0;
+        // };
 
 
-        // static void SetHealth(int health)
-        // {
-        //     if (health < 0)
-        //     {
-        //         throw new Exception("Health cannot be negative.");
-        //     }
-        //     else
-        //     {
-        //         Console.WriteLine($"Health: {health}");
-        //     }
+        // Console.WriteLine(isEven(4));
+        // Console.WriteLine(isOdd(3));
 
+        List<int> ints = new() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        List<int> Odds = ints.Where((int n) => n % 2 == 1).ToList();
 
-        // }
-
-        // try
-        // {
-        //     SetHealth(110);
-        // }
-        // catch (Exception ex)
-        // {
-        //     Console.WriteLine(ex.Message);
-        // }
-
-
-        static void CheckAge(int Age)
+        foreach (var n in Odds)
         {
-            if (Age < 0)
-            {
-                throw new Exception("Age cannot be negative.");
-            }
-            else
-            {
-                Console.WriteLine($"AGE: {Age}");
-            }
+            Console.WriteLine(n);
+        }
 
-
-        }
-        try
-        {
-            CheckAge(2);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
     }
 
 
