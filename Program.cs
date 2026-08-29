@@ -12,12 +12,20 @@ class Program
     static void Main(string[] args)
     {
 
-        Doctor doctor = new();
+        IPerson person = new Doctor();
+        Console.WriteLine(person.Who());
 
-        doctor.Name = "Muhammad Imran";
-        Console.WriteLine(doctor.GetName());
+        person = new Manager();
+        Console.WriteLine(person.Who());
 
 
+        IAnimal animal;
+
+        animal = new Dog();
+        animal.MakeSound();
+
+        animal = new Cat();
+        animal.MakeSound();
 
     }
 
