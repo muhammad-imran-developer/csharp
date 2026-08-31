@@ -6,30 +6,31 @@ using System.Text;
 
 namespace MyApp;
 
+// Generics/Templated Classes and Methods
 class Program
 {
     static void Main(string[] args)
     {
 
-        // Func<int, bool> isOdd = (int n) => n % 2 == 1;
-        // var isEven = (int n) =>
-        // {
-        //     return n % 2 == 0;
-        // };
-
-
-        // Console.WriteLine(isEven(4));
-        // Console.WriteLine(isOdd(3));
-
-        List<int> ints = new() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        List<int> Odds = ints.Where((int n) => n % 2 == 1).ToList();
-
-        foreach (var n in Odds)
+        // Templated Method
+        T DoubleIt<T>(T number) where T : INumber<T>
         {
-            Console.WriteLine(n);
+            return (dynamic)number * 2;
         }
+
+        var twice = DoubleIt(12); // yaha per jo value dein gay T os value ki data type mein convert ho jay ga ya 12 diya h to ab her T ki jaga int likha jay ga
+        Console.WriteLine(twice);
 
     }
 
+    // Templated Classes
+
+    class Vector<T, T2> //int
+    {
+        T data; // int data
+    }
+
+    Vector<int, float> vector = new(); // it replace T with int and T2 with float
+    Vector<double, string> vector2 = new(); // it rplace T with double and T2 with string
 
 }
