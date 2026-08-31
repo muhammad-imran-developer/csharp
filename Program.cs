@@ -10,19 +10,22 @@ class Program
 {
     static void Main(string[] args)
     {
+
+        List<Player> players = new();
         Player player = new(100);
-
         player.Name = "Imran";
-        player.Level = 5;
+        players.Add(player);
 
-        Console.WriteLine($"Name: {player.Name}");
-        Console.WriteLine($"Health: {player.Health}");
-        Console.WriteLine($"Level: {player.Level}");
+        Player player1 = new(80);
+        player1.Name = "Enemy";
+        players.Add(player1);
 
-        player.Attack();
+        Player player2 = new(500);
+        player2.Name = "Boss";
+        players.Add(player2);
 
-        player.TakeDamage(30);
-        player.TakeDamage(80);
+
+
 
     }
 }
