@@ -24,6 +24,22 @@ class Program
         player2.Name = "Boss";
         players.Add(player2);
 
+        Console.WriteLine($"Total Players: {players.Count}");
+
+        players.Remove(player1);
+
+
+        foreach (var p in players)
+        {
+
+            if (p.Health > 100)
+            {
+                Console.WriteLine($"Player Name: {p.Name}, Health: {p.Health}");
+
+            }
+
+        }
+
 
 
 
