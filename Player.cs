@@ -1,48 +1,11 @@
-/* class Player
- {
-     public string? Name { get; set; }
-     public int Health { get; private set; }
-
-     public int Level { get; set; }
-
-     public Player(int health)
-     {
-         Health = health;
-     }
-
-     public void Attack()
-     {
-         Console.WriteLine($"{Name} is attacking!");
-     }
-       public void TakeDamage(int damage)
-     {         Console.WriteLine($"{Name} took {damage}.");
-
-         Health -= damage;
-
-         if (Health <= 0)
-         {
-             Health = 0;
-             Console.WriteLine($"Health: {Health}");
-             Console.WriteLine($"{Name} died!");
-         }
-         else
-         {
-             Console.WriteLine($"Health: {Health}");
-         }
-     }
-
- } */
-
-
-//==============================
-//   INHERITANCE
-//==============================
 class Character
 {
+    protected string Name;
+    protected int Health;
 
-    public string Name;
-    public int Health;
-    public Character(int health, string name)
+    public int CurrentHealth => Health;
+
+    public Character(string name, int health)
     {
         Name = name;
         Health = health;
@@ -50,70 +13,65 @@ class Character
 
     public virtual void Attack()
     {
-        Console.WriteLine($"{Name} is attacking!");
+        Console.WriteLine($"{Name} attacks!");
     }
 
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
 
+        if (Health <= 0)
+        {
+            Health = 0;
+            Console.WriteLine($"{Name} has died!");
+        }
+        else
+        {
+            Console.WriteLine($"{Name} Health: {Health}");
+        }
+    }
 }
 
-interface IAttackable
+class Player : Character
 {
-    void Attack();
+    public int Level;
+
+    public Player(string name, int health, int level)
+        : base(name, health)
+    {
+        Level = level;
+    }
+
+    public void Attack(Character target)
+    {
+        int damage = 20;
+
+        Console.WriteLine($"{Name} attacks with sword!");
+        target.TakeDamage(damage);
+    }
+
+    public void Heal()
+    {
+        Health += 20;
+
+        Console.WriteLine($"{Name} healed for 20.");
+        Console.WriteLine($"{Name} Health: {Health}");
+    }
 }
 
-
-class Player : Character, IAttackable
+class Enemy : Character
 {
-    public Player(int health, string name) : base(health, name)
+    public int Damage;
+
+    public Enemy(string name, int health, int damage)
+        : base(name, health)
     {
-        // Console.WriteLine(Name);
-        // Console.WriteLine(Health);
+        Damage = damage;
     }
 
-    // public void Attack()
-    // {
-    //     Console.WriteLine($"{Name} attacks With sword!");
-    // }
-
-    // public int Level;
-
-    public override void Attack()
-    {
-        Console.WriteLine($"{Name} attacks With sword!");
-    }
-
-
-
-}
-
-class Enemy : Character, IAttackable
-{
-
-    public Enemy(int health, string name) : base(health, name)
-    {
-        // Console.WriteLine(Name);
-        // Console.WriteLine(Health);
-    }
-
-    // public void Attack()
-    // {
-    //     Console.WriteLine($"{Name} attacks With claws!");
-    // }
-    // public int Damage;
-
-    public override void Attack()
+    public void Attack(Character target)
     {
         Console.WriteLine($"{Name} attacks with claws!");
+        target.TakeDamage(Damage);
     }
-
-
-
 }
-
-
-
-// class Box<T>
-// {
-//     public T? Value;
-// };
-
